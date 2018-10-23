@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-import TodoList from './todoList';
+import ColorsList from './colorsList';
 
 class App extends Component {
     render() {
         return (
-            <TodoList/>
+
+            <ColorsList/>
         )
     }
 }

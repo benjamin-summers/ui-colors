@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './card.css';
 
-export default class TodoList extends Component {
+export default class ColorsList extends Component {
     constructor(props) {
         super(props);
 
@@ -30,18 +30,19 @@ export default class TodoList extends Component {
 
     render() {
         return (
-            <div className="to-do-list-main">
+            <div className="ui-colors-container">
+
                 <input
                     onChange={ (e)=>this.changeUserInput(e.target.value)}
                     value={this.state.userInput}
                     type="text"
                 />
-                <button onClick={() => this.addToList(this.state.userInput)}>press me</button>
+                <button onClick={() => this.addToList(this.state.userInput)}>Add Color</button>
                 <ul className="myCards">
                     {this.state.list.map( (val) => <li key={val.toLocaleString()}>
                         <React.Fragment>
                             <div className="card">
-                                <div style={{backgroundColor: '#' + val, height: 150, width: 150}}></div>
+                                <div style={{backgroundColor: '#' + val}}></div>
                                 <label style={{color: '#' + val}} >{"#" + val}</label>
                             </div>
                         </React.Fragment>

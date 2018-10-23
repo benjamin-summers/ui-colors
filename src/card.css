@@ -1,3 +1,27 @@
+input {
+    width: 40%;
+    margin-left: 30%;
+}
+
+button {
+    width: 40%;
+    margin-left: 30%;
+}
+
 ul.myCards {
     list-style-type: none;
+    text-align: center;
+}
+
+ul.myCards li {
+    display: inline-block;
+}
+
+div.card {
+    text-align: center;
+}
+
+div.card div {
+    height: 150px;
+    width: 150px;
 }
