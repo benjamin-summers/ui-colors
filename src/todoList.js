@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './card.css';
 
 export default class TodoList extends Component {
     constructor(props) {
@@ -6,7 +7,8 @@ export default class TodoList extends Component {
 
         this.state = {
             userInput: '',
-            list: []
+            list: [],
+            bgColor: props.bgColor
         }
     }
 
@@ -26,7 +28,6 @@ export default class TodoList extends Component {
         })
     }
 
-
     render() {
         return (
             <div className="to-do-list-main">
@@ -36,8 +37,15 @@ export default class TodoList extends Component {
                     type="text"
                 />
                 <button onClick={() => this.addToList(this.state.userInput)}>press me</button>
-                <ul>
-                    {this.state.list.map( (val) => <li key={val.toLocaleString()}>{val}</li>)}
+                <ul className="myCards">
+                    {this.state.list.map( (val) => <li key={val.toLocaleString()}>
+                        <React.Fragment>
+                            <div className="card">
+                                <div style={{backgroundColor: '#' + val, height: 150, width: 150}}></div>
+                                <label style={{color: '#' + val}} >{"#" + val}</label>
+                            </div>
+                        </React.Fragment>
+                    </li>)}
                 </ul>
             </div>
         )
